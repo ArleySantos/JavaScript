@@ -1,0 +1,35 @@
+@charset "UTF-8";
+
+*{
+    margin: 0;
+    padding: 0;
+}
+
+div{
+    background-color: rgb(150, 150, 252);
+    max-width: 500px;
+    min-width: 350px;
+    height: 400px;
+    margin: auto;
+    background-position: center center;
+}
+
+div > h1{
+    padding-top: 50px;
+    width: 35%;
+    margin: auto;
+}
+
+
+
+p{
+    width: 8%;
+    margin: auto;
+    padding-top: 30px;
+    padding-bottom: 30px;
+}
+
+nav{
+    width: 27%;
+    margin: auto;
+}

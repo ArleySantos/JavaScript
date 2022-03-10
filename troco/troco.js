@@ -23,12 +23,12 @@ function calcular(){
     function clicar(){
     var M = Number.parseInt(prompt('Digite uma distância em metros (m)'))
     M.toLocaleString('pt-BR', {style: 'currency', currency: 'BRL'})
-    var Km = M/1000
-    var Hm = M/100
-    var Dam = M/10
-    var dm = M*10
-    var cm = M*100
-    var mm = M*1000
+    var Km = (M/1000)
+    var Hm = (M/100)
+    var Dam = (M/10)
+    var dm = (M*10)
+    var cm = (M*100)
+    var mm = (M*1000)
 
     res.innerHTML = `<h2>A distância de ${M} mestros, corresponde a...</h2>`
 
@@ -42,3 +42,20 @@ function calcular(){
     
 
 }
+
+    function converter(){
+        var conv = Number(prompt('Digite uma temperatura em °C (Celsius)'))
+        var resu = document.getElementById('resu')
+        var grau = document.getElementById('graus')
+        var grau2 = document.getElementById('graus2')
+
+        resu.innerHTML = `A temperatura de ${conv}°C, corresponde a...`
+
+        var k = (conv + 273.15)
+        var f = (conv * 1.8 + 32)
+
+        grau.innerText = (Math.round(k)) + '°K Kelvin '
+        grau2.innerText = `${f}°F Fahrenheit`
+
+
+    }

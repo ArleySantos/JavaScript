@@ -21,14 +21,14 @@ function calcular(){
     bt.addEventListener('click', clicar)
 
     function clicar(){
-    var M = Number.parseInt(prompt('Digite uma distância em metros (m)'))
-    M.toLocaleString('pt-BR', {style: 'currency', currency: 'BRL'})
+    var M = Number.parseFloat(prompt('Digite uma distância em metros (m)'))
     var Km = (M/1000)
     var Hm = (M/100)
     var Dam = (M/10)
     var dm = (M*10)
     var cm = (M*100)
     var mm = (M*1000)
+
 
     res.innerHTML = `<h2>A distância de ${M} mestros, corresponde a...</h2>`
 

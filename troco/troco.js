@@ -18,26 +18,29 @@ function calcular(){
     var res = document.getElementById('res')
     var dados = document.getElementById('dados')
     var dado2 = document.getElementById('dado2')
+    var d1 = document.getElementById('d1')
+    var d2 = document.getElementById('d2')
+    var d3 = document.getElementById('d3')
     bt.addEventListener('click', clicar)
 
     function clicar(){
     var M = Number.parseFloat(prompt('Digite uma distância em metros (m)'))
-    var Km = (M/1000)
-    var Hm = (M/100)
+    var Km = (M/1000).toFixed(3)
+    var Hm = (M/100).toFixed(3)
     var Dam = (M/10)
     var dm = (M*10)
     var cm = (M*100)
     var mm = (M*1000)
 
 
-    res.innerHTML = `<h2>A distância de ${M} mestros, corresponde a...</h2>`
+    res.innerHTML = '<h2>A distância de' + M + ' mestros, corresponde a...</h2>'
 
     dados.innerHTML = `<p>${Km} quilômetros (km)</p>
     <p>${Hm} hectômetros (hm)</p>
-    <p>${Dam} decâmetros (dam)</p>
-    <p>${dm} decímetros (dm)</p>
-    <p>${cm} centímetors (cm)</p>
-    <p>${mm} milímetros (mm)</p>` 
+    <p>${Dam} decâmetros (dam)</p>`
+    d1.innerHTML = new Intl.NumberFormat( {style: 'currency', currency: 'BRL'}).format(dm) + ' decímetros (dm)'
+    d2.innerHTML = new Intl.NumberFormat( {style: 'currency', currency: 'BRL'}).format(cm) + ' centímetors (cm)'
+    d3.innerHTML = new Intl.NumberFormat( {style: 'currency', currency: 'BRL'}).format(mm) + ' milímetros (mm)'
 
     
 
@@ -54,8 +57,8 @@ function calcular(){
         var k = (conv + 273.15)
         var f = (conv * 1.8 + 32)
 
-        grau.innerText = (Math.round(k)) + '°K Kelvin '
-        grau2.innerText = `${f}°F Fahrenheit`
+        grau.innerText = k.toFixed(2).replace('.', ',') + '°K (Kelvin) '
+        grau2.innerText = f.toFixed(2).replace('.', ',') + '°F (Fahrenheit)'
 
 
     }
